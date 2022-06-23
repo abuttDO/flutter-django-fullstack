@@ -23,12 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = ')^rzimn_e3lfbbh-u^pw)jovo#ca!&s$=n92xobmc4&@$oyx-w'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = [
-	'10.0.2.2', #needed for Android emulator
-    'localhost'
-]
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost,10.0.2.2,").split(",")
 
 
 # Application definition
